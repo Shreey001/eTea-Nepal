@@ -1,7 +1,7 @@
 const config = {
   API_URL:
     process.env.NODE_ENV === "production"
-      ? "https://eteanepalbackend-production.up.railway.app"
+      ? "https://etea-nepal-backend.vercel.app"
       : "http://localhost:8000",
 };
 
