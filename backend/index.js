@@ -10,16 +10,17 @@ require("dotenv").config();
 
 // Middleware
 app.use(
-  cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? ["https://e-tea-nepal-bked.vercel.app/"]
-        : ["http://localhost:3000"],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-    allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],
-    exposedHeaders: ["x-auth-token"],
-  })
+  cors()
+  //   {
+  //   origin:
+  //     process.env.NODE_ENV === "production"
+  //       ? ["https://e-tea-nepal-bked.vercel.app/"]
+  //       : ["http://localhost:3000"],
+  //   credentials: true,
+  //   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+  //   allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],
+  //   exposedHeaders: ["x-auth-token"],
+  // }
 );
 
 app.use(express.json());
