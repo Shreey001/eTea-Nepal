@@ -1,7 +1,7 @@
 const config = {
   API_URL:
     process.env.NODE_ENV === "production"
-      ? "https://e-tea-nepal-murex.vercel.app"
+      ? "https://e-tea-nepal-bked.vercel.app/"
       : "http://localhost:8000",
 };
 
