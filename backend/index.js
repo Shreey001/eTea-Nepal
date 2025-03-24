@@ -9,18 +9,12 @@ const fs = require("fs");
 require("dotenv").config();
 
 // Middleware
+
 app.use(
-  cors()
-  //   {
-  //   origin:
-  //     process.env.NODE_ENV === "production"
-  //       ? ["https://e-tea-nepal-bked.vercel.app/"]
-  //       : ["http://localhost:3000"],
-  //   credentials: true,
-  //   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-  //   allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],
-  //   exposedHeaders: ["x-auth-token"],
-  // }
+  cors({
+    origin: "https://e-tea-nepal-frontend.vercel.app/", // Specific frontend domain
+    credentials: true, // Allow cookies/auth headers
+  })
 );
 
 app.use(express.json());
