@@ -1,0 +1,9 @@
+{
+  "short_name": "eTea Nepal",
+  "name": "eTea Nepal - Online Tea Store",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

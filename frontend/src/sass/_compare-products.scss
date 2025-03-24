@@ -1,0 +1,129 @@
+.compare-products {
+  margin-top: 8rem;
+  padding: 2rem;
+  min-height: calc(100vh - 20rem);
+
+  @media screen and (max-width: 656px) {
+    margin-top: 5rem;
+  }
+
+  &__content {
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    h2 {
+      font-size: 3rem;
+      color: #343434;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    &__wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+      &__products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 2rem;
+        width: 100%;
+
+        label {
+          display: flex;
+          align-items: center;
+          font-size: 1.6rem;
+          font-weight: 400;
+          color: #343434;
+          cursor: pointer;
+          transition: color 0.3s;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          background-color: #f5f5f5;
+
+          &:hover {
+            background-color: #e7d400;
+            color: #ffffff;
+          }
+
+          input {
+            margin-right: 1rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      max-width: 40rem;
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #343434;
+      background-color: #e7d400;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: darken(#e7d400, 10%);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+    }
+  }
+}
+
+.comparison-result {
+  width: 100%;
+  max-width: 120rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+  h3 {
+    font-size: 2rem;
+    color: #343434;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: #666666;
+    line-height: 1.6;
+
+    strong {
+      color: #343434;
+    }
+  }
+
+  .better-value {
+    color: #5DB646;
+    font-weight: 500;
+  }
+}
+

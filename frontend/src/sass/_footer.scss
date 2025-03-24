@@ -1,0 +1,170 @@
+// todo : Footer Section
+
+footer {
+  background-color: #343434;
+  padding: 4rem 0 2rem 0;
+  margin-top: 6rem;
+  color: #ffffff;
+}
+
+.footer__container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  &__logo {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    img {
+      height: 8rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 4rem;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__links {
+      flex: 1;
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          font-size: 1.6rem;
+          margin-bottom: 1.5rem;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &:hover {
+            color: #e7d400;
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+
+    &__social {
+      flex: 1;
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      &__links {
+        display: flex;
+        gap: 3rem;
+        justify-content: flex-start;
+
+        @media screen and (max-width: 768px) {
+          justify-content: center;
+        }
+
+        img {
+          height: 3rem;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+
+    &__newsletter {
+      flex: 1.5;
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      &__input {
+        display: flex;
+        gap: 1rem;
+        max-width: 40rem;
+
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+          margin: 0 auto;
+        }
+
+        input {
+          flex: 1;
+          padding: 1.2rem;
+          font-size: 1.6rem;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 0.5rem;
+          background: transparent;
+          color: #ffffff;
+          outline: none;
+          min-width: 0;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+          }
+
+          &:focus {
+            border-color: #e7d400;
+          }
+        }
+
+        button {
+          padding: 1.2rem 2.5rem;
+          font-size: 1.6rem;
+          background-color: #e7d400;
+          border: none;
+          border-radius: 0.5rem;
+          color: #343434;
+          cursor: pointer;
+          transition: all 0.3s;
+          white-space: nowrap;
+
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
+
+          &:hover {
+            background-color: lighten(#e7d400, 10%);
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}

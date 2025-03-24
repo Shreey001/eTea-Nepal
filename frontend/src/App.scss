@@ -1,0 +1,883 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "./sass/login";
+@import "./sass/loader";
+@import "./sass/hero";
+@import "./sass/details";
+@import "./sass/health";
+@import "./sass/shop";
+@import "./sass/contact";
+@import "./sass/footer";
+@import "./sass/cart";
+@import "./sass/compare-products";
+@import "./sass/profile";
+@import "./sass/orders";
+@import "./sass/seller-dashboard";
+@import "./sass/notification";
+@import "./sass/add-product";
+@import "./sass/seller-orders";
+@import "./sass/product-approval";
+@import "./sass/manage-products";
+@import "./sass/seller-report";
+@import "./sass/manage-users";
+
+
+
+
+$baseColor: #e7d400;
+$bodyColor: #e3efed;
+$white: #ffffff;
+$green: #5e905d;
+$lightGreen:#5DB646;
+
+.out-of-stock{
+  opacity: 0.4;
+
+  &::before{
+    content: "Product out of stock";
+    font-size: 3rem;
+    position: absolute;
+    opacity: 1;
+    top: 50%;
+    left: 0;
+    transform: rotate(300deg);
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+  }
+}
+
+.loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  color: $baseColor;
+  font-family: 'Lexend Exa', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.heading-text{
+  text-align: center;
+  font-size: 5rem;
+  color: $green;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.App {
+  overflow-x: hidden;
+}
+
+#dn {
+  display: none;
+}
+.dn {
+  display: none;
+}
+.asl{
+  align-self: baseline;
+}
+
+.mb1{
+  margin-bottom: 1rem;
+}
+
+.clickAnimation{
+  transition: all 0.5s;
+  &:hover{
+    scale: 1.2;
+  }
+  &:active{
+    transform: scale(0.5);
+  }
+}
+
+.g2{
+  gap: .5rem;
+  a{
+    width: fit-content;
+    height: fit-content;
+    &:first-of-type{
+
+      margin-top: 3rem;
+    }
+  }
+}
+
+.df{
+  display: flex;
+}
+.fdc{
+  flex-direction: column;
+}
+#btn-secondary, .btn-secondary{
+  background-color: transparent;
+  border: 1.5px solid $baseColor;
+  @media screen and (max-width:656px){
+    background-color:$lightGreen ;
+    border: none;
+    margin-top: 1rem;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+#card__animation {
+  animation: mobileMenuAnimation 1s;
+  animation-fill-mode: forwards;
+}
+
+#trigger {
+  &::before {
+    opacity: 0;
+    animation: trigger 3s;
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    border-radius: 50%;
+    right: 0.5rem;
+    top: 50%;
+  }
+}
+
+input, button {
+  font-family: inherit;
+}
+
+.trigger {
+  &::before {
+    opacity: 0;
+    animation: trigger2 3s;
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    border-radius: 50%;
+    right: 0.5rem;
+    top: 50%;
+  }
+}
+
+.ml2 {
+  margin-left: 2.5rem;
+}
+.mr2 {
+  margin-right: 2.5rem;
+}
+
+.btn{
+  padding: 1rem 1.5rem;
+    font-family: inherit;
+    background-color: $lightGreen;
+    color: $white;
+    border: none;
+    border-radius:0.5rem;
+}
+
+.nav-btn{
+  button{
+
+    padding: 1rem 1.5rem;
+    font-family: inherit;
+    background-color: $lightGreen;
+    color: $white;
+    border: none;
+    border-radius:0.5rem;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lexend Exa", sans-serif;
+  //   overflow-x: hidden;
+  background-color: $bodyColor;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//todo: Media Queries
+
+//! Phone
+
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 55%;
+  }
+  @media screen and (max-width: 325px) {
+    html {
+      font-size: 50%;
+    }
+  }
+  @media screen and (max-width: 312px) {
+    html {
+      font-size: 45%;
+    }
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 656px) {
+  .App {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+
+  .hero__upper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -12rem;
+  }
+
+  .hero__upper__text {
+    width: 75%;
+  }
+
+  .hero__upper button,
+  .hero__menu__logo,
+  .hero__upper__text {
+    margin-left: 10rem;
+  }
+
+  .hero__lower__text {
+    width: 75%;
+    margin-inline: auto;
+  }
+
+  .contact__container,
+  .footer__container {
+    width: 100%;
+  }
+}
+
+//! PC
+
+@media screen and (min-width: 656px) {
+  html {
+    font-size: 45%;
+
+    @media screen and (min-width: 856px) {
+      font-size: 50%;
+    }
+    @media screen and (min-width: 956px) {
+      font-size: 55.5%;
+    }
+    @media screen and (min-width: 1100px) {
+      font-size: 62.5%;
+    }
+  }
+
+  .hero {
+    &__mobile__menu {
+      position: fixed;
+      top: 0;
+      left: 48%;
+      width: 50%;
+      height: 10rem;
+      border: none;
+
+      a {
+        transform: scale(1.1);
+
+        .active::before {
+          top: 6rem;
+        }
+      }
+    }
+    &__content {
+      display: flex;
+      margin-top: 10rem;
+    }
+
+    &__upper {
+      flex: 80%;
+      background-image: url(./Assets/pc/pc_hero.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-position-y: 5rem;
+      height: 100vh;
+      width: 100%;
+
+      a {
+        margin-left: 6rem;
+      }
+
+      button {
+        margin-left: -0.6rem;
+        padding: 2rem 8rem 2rem 8rem;
+        font-size: 2rem;
+       
+        transform: translateX(-40rem);
+      }
+
+      &__text {
+        position: relative;
+        font-size: 8rem;
+        width: 80%;
+        margin-inline: 0;
+        margin-left: 6rem;
+        font-weight: 500;
+        margin-top: 5rem;
+
+        &::before {
+          height: 300%;
+          width: 50%;
+          opacity: 10%;
+          top: -150%;
+          left: -10rem;
+        }
+      }
+    }
+    &__lower {
+      flex: 30%;
+      margin-top: 6rem;
+
+      &__text {
+        text-align: start;
+        font-weight: 400;
+        font-size: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      ul {
+        justify-content: flex-start;
+        gap: 5rem;
+      }
+    }
+    &__menu {
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      background: $bodyColor;
+      height: 10rem;
+
+      &__logo {
+        margin-left: 6rem;
+      }
+    }
+  }
+
+  .details__container {
+    height: 110vh;
+    @media screen and (min-height: 850px) {
+      height: 98vh;
+    }
+    @media screen and (min-height: 900px) {
+      height: 95vh;
+    }
+    @media screen and (min-width: 656px) and (max-width: 1100px) {
+      height: 75vh;
+    }
+
+    &__content {
+      display: flex;
+      height: 100%;
+
+      &__text {
+        display: flex;
+        flex: 50%;
+        flex-direction: column;
+        gap: 25rem;
+        margin-left: 8rem;
+        text-align: start;
+        margin-top: 8rem;
+        font-size: 3.5rem;
+        line-height: 5rem;
+        width: 100%;
+      }
+      &__image {
+        flex: 70%;
+        // margin-top: -30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // width: 100%;
+        // transform: scale(1.5);
+
+        @media screen and (min-width: 1500px) {
+          // transform: scale(2);
+        }
+        @media screen and (max-width: 1100px) and (min-width: 856px) {
+          flex: 60%;
+          // transform: scale(1.2);
+        }
+        @media screen and (max-width: 856px) and (min-width: 656px) {
+          flex: 50%;
+          // transform: scale(1);
+        }
+        @media screen and (min-width: 656px) and (max-width: 1333px) {
+    align-items: normal;
+        }
+      
+
+        img {
+          background-size: cover;
+        }
+
+        &::before {
+          content: "From the Hills of Nepal";
+          color: black;
+          opacity: 0.5;
+          font-size: 1.5rem;
+          bottom: 92%;
+          left: 40%;
+          position: absolute;
+          @media screen and (min-width: 756px) {
+            top: 90%;
+            left: 35%;
+          }
+          @media screen and (min-width: 1500px) {
+            top: 90%;
+          }
+          @media screen and (min-width: 656px) and (max-width: 1100px) {
+            top: 90%;
+          }
+          @media screen and (min-width: 656px) and (max-width: 756px) {
+            top: 85%;
+            left: 30%;
+          }
+         
+        }
+      }
+      &__paragraph {
+        // margin-left: 8rem;
+        color: black;
+        margin-top: -22rem;
+        margin-bottom: 3rem;
+       // line-height: 4.5rem;
+        font-size: 2rem;
+        font-weight: 300;
+        position: relative;
+
+        
+      }
+    }
+  }
+
+  .health__container {
+    background-color: #d3cac1;
+    height: 110vh;
+    color: black;
+    &__content {
+      height: 100%;
+      background-image: url(./Assets/pc/herbal_benifits.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      background-attachment: fixed;
+
+      &__text {
+        width: 14ch;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        margin-left: 8rem;
+        opacity: 0.6;
+        font-size: 7rem;
+
+        @media screen and (max-width: 382px) {
+          font-size: 3rem;
+        }
+      }
+
+      &__health {
+        // opacity: 0;
+        margin-left: 8rem;
+        height: 60%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .shop__container {
+    max-width: 100rem;
+    margin-inline: auto;
+  }
+
+  .cart__container {
+    width: 32%;
+    right: 0rem;
+    margin-top: 10rem;
+    border-left: 1px solid black;
+  }
+
+  .contact__content {
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    height: 80vh;
+
+    &__text {
+      flex: 20%;
+      text-align: center;
+      font-size: 8rem;
+      font-weight: 500;
+      color: $green;
+      padding-top: 5%;
+      @media screen and (max-height: 775px) {
+        padding-bottom: 4rem;
+      }
+      @media screen and (max-height: 700px) {
+        padding-top: 14%;
+      }
+    }
+    &__form {
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      background-image: url(./Assets/pc/contacts.png);
+      flex-direction: row;
+
+      &__upper {
+        flex: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: -5rem;
+
+        li {
+          transform: scale(0.9);
+          width: 70%;
+          input {
+            width: 100%;
+          }
+        }
+        button {
+          margin-top: -2rem;
+          transform: scale(0.9);
+        }
+      }
+      &__lower {
+        flex: 40%;
+      }
+    }
+  }
+
+  .footer__container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-height: 740px) {
+      height: 65vh;
+    }
+    @media screen and (max-height: 700px) {
+      height: 85vh;
+    }
+    @media screen and (max-height: 600px) {
+      height: 95vh;
+    }
+    @media screen and (min-height: 900px) {
+      height: 65vh;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      aspect-ratio: 1;
+      height: 400%;
+      position: absolute;
+      top: 0%;
+      left: -12%;
+      // right: -100%;
+      background-color: #343434;
+      z-index: -1;
+      border-radius: 50%;
+      display: none;
+    }
+  }
+  .footer__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    color: $white;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      aspect-ratio: 1;
+      height: 400%;
+      position: absolute;
+      top: 0%;
+      left: -98%;
+      // right: -100%;
+      background-color: #343434;
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    @media screen and (max-height: 658px) {
+      &__upper {
+        transform: scale(0.7);
+        margin-left: -3rem;
+      }
+    }
+
+    &__upper {
+      position: absolute;
+      top: -10%;
+      left: -30%;
+    }
+
+    &__middle {
+      &__text {
+        font-size: 2.5rem;
+      }
+      &__email {
+        font-size: 1.2rem;
+        margin: 2rem 0 1rem 0;
+      }
+      hr {
+        width: 20.55rem;
+      }
+      &__links {
+        margin-top: 3rem;
+        display: flex;
+        gap: 2rem;
+        
+      }
+    }
+    &__lower {
+      margin-top: 14rem;
+
+      &__text {
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        span {
+          color: $baseColor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 656px) and (max-width: 1100px) {
+  .hero {
+    &__mobile__menu {
+      width: 65%;
+      left: 18vw;
+      @media screen and (max-width: 1040px) {
+        scale: 0.8;
+      }
+      @media screen and (max-width: 710px) {
+        scale: 0.7;
+      }
+    }
+
+    &__upper {
+      background-position-y: 22rem;
+    }
+    &__lower {
+      flex: 45%;
+    }
+  }
+}
+@media screen and (min-width: 1100px) {
+  .hero {
+    &__mobile__menu {
+      left: 25vw;
+    }
+    &__upper {
+      background-position-y: 15rem;
+    }
+  }
+}
+
+@media screen and (min-width: 656px) and (max-height: 650px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+// todo : Keyframes
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes loading3 {
+  0% {
+    opacity: 0;
+    transform: translateX(30rem);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes mobileMenuAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  80% {
+    opacity: 0.9;
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes trigger {
+  0% {
+    top: 50%;
+    opacity: 0.4;
+  }
+
+  25% {
+    top: 0;
+    opacity: 0.6;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  75% {
+    top: -100%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+@keyframes trigger2 {
+  0% {
+    top: 50%;
+    opacity: 0.4;
+  }
+
+  25% {
+    top: 0;
+    opacity: 0.6;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  75% {
+    top: -100%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes clipPath {
+  0% {
+    clip-path: circle(100%);
+  }
+
+  50% {
+    clip-path: circle(32%);
+  }
+  100% {
+    clip-path: circle(100%);
+  }
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes description {
+  0% {
+    top: 100%;
+    scale: 0;
+
+    
+  }
+  
+  100% {
+    top: 0%;
+    scale: 0.9;
+border-radius: 2rem;
+  }
+}
